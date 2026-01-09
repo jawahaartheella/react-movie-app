@@ -53,7 +53,7 @@ A simple and clean movie listing application built with **React** that displays 
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone <https://github.com/jawahaartheella/react-movie-app.git>
 
 # Navigate to the project folder
 cd the-movie-app
@@ -66,6 +66,16 @@ npm run dev
 ```
 ---
 
+## 🔐 Environment Variables
+
+Create a `.env.local` file in the root directory and add:
+
+```env
+VITE_TMDB_API_KEY=your_api_key_here
+```
+
+---
+
 ## 🚀 Deployment
 
 The application is deployed using **Vercel**.
@@ -74,7 +84,7 @@ The application is deployed using **Vercel**.
 
 ## 🔗 Live Demo
 
-> Live demo link will be added soon.
+> https://the-movie-app-react.vercel.app
 
 ---
 
