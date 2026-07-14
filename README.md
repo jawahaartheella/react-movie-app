@@ -8,7 +8,7 @@ A simple and clean movie listing application built with **React** that displays 
 
 ## 🔗 Live Demo
 
-> https://the-movie-app-react.vercel.app
+> <a href="https://the-movie-app-react.vercel.app" target="_blank" rel="noreferrer noopener"></a>
 
 ---
 
