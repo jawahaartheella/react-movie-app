@@ -6,6 +6,12 @@ A simple and clean movie listing application built with **React** that displays 
 
 ---
 
+## 🔗 Live Demo
+
+> https://the-movie-app-react.vercel.app
+
+---
+
 ## 🚀 Features
 
 - 🎥 Displays a list of movies using TMDB data
@@ -82,12 +88,6 @@ VITE_APPWRITE_COLLECTION_ID=your_appwrite_collection_id_here
 ## 🚀 Deployment
 
 The application is deployed using **Vercel**.
-
----
-
-## 🔗 Live Demo
-
-> https://the-movie-app-react.vercel.app
 
 ---
 
