@@ -1,6 +1,7 @@
 export interface Movie {
+    id: number;
     title: string;
-    voate_average: number;
+    vote_average: number;
     poster_path: string;
     release_date: string;
     original_language: string;
