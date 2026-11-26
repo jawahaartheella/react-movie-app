@@ -12,5 +12,8 @@ export interface User {
 }
 
 export interface TrendingMovie {
-
+    title: string;
+    movie_id: number;
+    poster_path: string;
+    count: number
 }
