@@ -6,7 +6,7 @@ import { useDebounce } from "react-use";
 import Search from "../components/Search";
 import Spinner from "../components/Spinner";
 import MovieCard from "../components/MovieCard";
-import { getTrendingMovies, updateSearchCount } from "../appwrite.js";
+import { getTrendingMovies, updateSearchCount } from "../lib/actions";
 import { Movie } from "../types";
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
@@ -54,7 +54,7 @@ export default function Home() {
 
       setMoviesList(data.results || []);
 
-      if (query && data.results && data.results.length > 0) {
+      if (query && query.trim().length >= 3 && data.results && data.results.length > 0) {
         await updateSearchCount(query, data.results[0]);
       }
     } catch (error) {
@@ -76,7 +76,14 @@ export default function Home() {
     }
   };
 
-  useDebounce(() => setDebounceSearchTerm(searchTerm), 700, [searchTerm]);
+  useDebounce(() => {
+    const trimmed = searchTerm.trim();
+    if (trimmed.length === 0) {
+      setDebounceSearchTerm('')
+    } else if (trimmed.length >= 3) {
+      setDebounceSearchTerm(searchTerm)
+    }
+  }, 800, [searchTerm]);
 
   useEffect(() => {
     fetchMovies(debounceSearchTerm);
@@ -108,9 +115,9 @@ export default function Home() {
 
             <ul>
               {trendingMovies.map((movie, index) => (
-                <li key={movie.$id || index}>
+                <li key={movie.movie_id || index}>
                   <p>{index + 1}</p>
-                  <img src={movie.poster_url} alt={movie.title || 'Trending movie'} />
+                  <img src={movie.poster_path} alt={movie.title || 'Trending movie'} />
                 </li>
               ))}
             </ul>
