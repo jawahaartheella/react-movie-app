@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
+
+// configure the font
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"]
+});
 
 export const metadata: Metadata = {
   title: "The Movie App",
@@ -16,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="{dmSans.className}">{children}</body>
     </html>
   );
 }
