@@ -35,6 +35,10 @@
             @apply text-2xl font-bold text-white sm:text-3xl;
         }
 
+        p {
+            @apply text-white text-base;
+        }
+
         main {
             @apply min-h-screen relative bg-primary;
         }
@@ -143,6 +147,18 @@
             & .content .year {
                 @apply text-gray-100 font-medium text-base;
             }
+        }
+
+        .details-wrapper {
+            @apply px-5 py-8 sm:px-10 max-w-6xl mx-auto flex flex-col relative z-10;
+        }
+
+        .stat-card {
+            @apply bg-dark-100/70 border border-light-100/10 p-4 rounded-xl flex flex-col shadow-inner shadow-light-100/5;
+        }
+
+        .genre-badge {
+            @apply px-3.5 py-1.5 rounded-full text-xs font-semibold bg-dark-100/80 border border-light-100/20 text-light-100;
         }
     }
 

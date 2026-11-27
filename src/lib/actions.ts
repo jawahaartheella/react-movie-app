@@ -39,3 +39,23 @@ export async function getTrendingMovies(): Promise<TrendingMovie[]> {
         return [];
     }
 }
+
+export async function findIfLiked(movieId: number, userId: string): Promise<boolean> {
+    try {
+        if (!userId) return false;
+
+        const res = await sql`
+            SELECT EXISTS (
+                SELECT 1
+                FROM liked_movies
+                WHERE user_id = ${userId} AND movie_id = ${movieId}
+            ) AS is_liked
+        `;
+
+        return res[0].is_liked ?? false;
+    } catch (error) {
+        console.error("Error checking if movie is liked: ", error);
+        return false;
+    }
+}
+

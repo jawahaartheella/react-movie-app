@@ -8,6 +8,7 @@ import Spinner from "../components/Spinner";
 import MovieCard from "../components/MovieCard";
 import { getTrendingMovies, updateSearchCount } from "../lib/actions";
 import { Movie } from "../types";
+import Link from "next/link";
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
 
@@ -134,7 +135,9 @@ export default function Home() {
           ) : (
             <ul>
               {moviesList.map((movie, index) => (
-                <MovieCard key={(movie as any).id || index} movie={movie} />
+                <Link href={`/movie/${movie.id}`} key={movie.id || index}>
+                  <MovieCard movie={movie} />
+                </Link>
               ))}
             </ul>
           )}
