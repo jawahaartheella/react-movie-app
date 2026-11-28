@@ -6,6 +6,7 @@ import { useDebounce } from "react-use";
 import Search from "../components/Search";
 import Spinner from "../components/Spinner";
 import MovieCard from "../components/MovieCard";
+import ProfileDropdown from "../components/ProfileDropdown";
 import { getTrendingMovies, updateSearchCount } from "../lib/actions";
 import { Movie } from "../types";
 import Link from "next/link";
@@ -99,7 +100,14 @@ export default function Home() {
       <div className="pattern" />
 
       <div className="wrapper">
-        <img className="logo" src="/logo-no-bg.svg" alt="Logo" />
+        {/* Navigation Bar: Logo on the Left, Profile on the Right */}
+        <nav className="flex items-center justify-between w-full mb-4 z-20 relative">
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <img src="/logo-no-bg.svg" alt="Logo" className="w-12 h-auto" />
+          </Link>
+
+          <ProfileDropdown />
+        </nav>
 
         <header>
           <img src="/hero.png" alt="Hero banner" />

@@ -24,6 +24,9 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 
+# Learning docs
+learning-docs/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
